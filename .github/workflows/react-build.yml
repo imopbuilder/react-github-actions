@@ -1,0 +1,36 @@
+name: React Build
+run-name: React App Build
+
+on:
+  push:
+    branches:
+      - main
+  
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 8
+
+      - name: Install dependencies
+        run: pnpm install
+      
+      - name: Build app
+        run: pnpm build
+      
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
+      
+      - run: echo "🍏 This job's status is ${{ job.status }}."
