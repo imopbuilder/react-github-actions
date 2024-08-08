@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "test:dev": "node -r dotenv/config ./node_modules/.bin/vite.ps1",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "format": "pnpm biome format --write ./src",
