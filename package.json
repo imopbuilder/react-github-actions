@@ -6,10 +6,10 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "preview": "vite preview",
     "format": "pnpm biome format --write ./src",
     "lint": "pnpm biome lint ./src --apply",
     "check": "pnpm biome check ./src --apply",
-    "preview": "vite preview",
     "vault:pull": "npx dotenv-vault pull development .env.development.local",
     "vault:push": "npx dotenv-vault push development .env.development.local"
   },
@@ -19,6 +19,7 @@
     "@tanstack/react-router": "^1.33.7",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "dotenv": "^16.4.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "tailwind-merge": "^2.3.0",
